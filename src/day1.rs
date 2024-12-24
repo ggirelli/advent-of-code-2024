@@ -2,8 +2,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::iter;
 
-fn read_input() -> String {
-    let filepath = "data/day1.txt";
+pub fn read_input(filepath: &str) -> String {
     let content =
         fs::read_to_string(filepath).expect("Should have been able to read the file: {filepath}");
     content
@@ -84,7 +83,7 @@ fn calc_similarity_score(col1: &Vec<i32>, col2: &Vec<i32>) -> i32 {
 pub fn run() {
     let mut col1: Vec<i32>;
     let mut col2: Vec<i32>;
-    (col1, col2) = parse_input(read_input());
+    (col1, col2) = parse_input(read_input("data/day1.txt"));
     col1.sort();
     col2.sort();
 
